@@ -1,0 +1,1 @@
+A Python library for reading PMTiles v3 archives, supporting multi-level leaf directories and GZIP-compressed directory data.

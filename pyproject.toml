@@ -1,0 +1,37 @@
+[project]
+name = "peat-mos-pmtiles"
+version = "0.1.0"
+description = "A Python library for reading PMTiles v3 archives, supporting multi-level leaf directories and GZIP-compressed directory data."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Timothy Halford" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "hilbertcurve>=2.0.5",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "peat_mos.pmtiles"
+
+[dependency-groups]
+dev = [
+    "pmtiles>=3.8.1",
+    "pyright>=1.1.414",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[tool.ruff.lint]
+ignore = [
+    "UP046" # ruff and pyright are incompatible on this
+]
